@@ -218,10 +218,10 @@ class UnitTests(parameterized.TestCase):
     )
     def test_get_permission_with_invalid_name_constructs(
         self,
-        name: str | None = None,
-        corpus_name: str | None = None,
-        tunedModel_name: str | None = None,
-        permission_id: int | str | None = None,
+        name=None,
+        corpus_name=None,
+        tunedModel_name=None,
+        permission_id=None,
     ):
         with self.assertRaises(ValueError):
             fetch_perm = permission.get_permission(
