@@ -62,7 +62,7 @@ class AsyncTests(parameterized.TestCase, unittest.IsolatedAsyncioTestCase):
 
         @add_client_method
         def get_tuned_model(
-            request: Optional[glm.GetTunedModelRequest]= None,
+            request: Optional[glm.GetTunedModelRequest] = None,
             *,
             name=None,
             **kwargs,

@@ -272,7 +272,7 @@ class PermissionAdapter:
             email_address=email_address,
         )
         return glm.CreatePermissionRequest(
-            parent=self.name, # pytype: disable=attribute-error
+            parent=self.name,  # pytype: disable=attribute-error
             permission=permission,
         )
 
@@ -348,8 +348,7 @@ class PermissionAdapter:
             client = get_dafault_permission_client()
 
         request = glm.ListPermissionsRequest(
-            parent=self.name, # pytype: disable=attribute-error
-            page_size=page_size
+            parent=self.name, page_size=page_size  # pytype: disable=attribute-error
         )
         for permission in client.list_permissions(request):
             permission = type(permission).to_dict(permission)
@@ -367,8 +366,7 @@ class PermissionAdapter:
             client = get_dafault_permission_async_client()
 
         request = glm.ListPermissionsRequest(
-            parent=self.name, # pytype: disable=attribute-error
-            page_size=page_size
+            parent=self.name, page_size=page_size  # pytype: disable=attribute-error
         )
         async for permission in await client.list_permissions(request):
             permission = type(permission).to_dict(permission)
@@ -389,8 +387,7 @@ class PermissionAdapter:
         if client is None:
             client = get_dafault_permission_client()
         transfer_request = glm.TransferOwnershipRequest(
-            name=self.name, # pytype: disable=attribute-error
-            email_address=email_address
+            name=self.name, email_address=email_address  # pytype: disable=attribute-error
         )
         transfer_respone = client.transfer_ownership(request=transfer_request)
 
@@ -403,7 +400,6 @@ class PermissionAdapter:
         if client is None:
             client = get_dafault_permission_async_client()
         transfer_request = glm.TransferOwnershipRequest(
-            name=self.name, # pytype: disable=attribute-error
-            email_address=email_address
+            name=self.name, email_address=email_address  # pytype: disable=attribute-error
         )
         transfer_respone = await client.transfer_ownership(request=transfer_request)
