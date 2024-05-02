@@ -684,8 +684,8 @@ class Corpus:
         grantee_type: Optional[permission_types.GranteeTypeOptions] = None,
         email_address: Optional[str] = None,
         client: glm.PermissionServiceAsyncClient | None = None,
-    ) -> permission_types.Permission:  # type: ignore
-        return self.permissions.create_async(
+    ) -> permission_types.Permission:
+        return await self.permissions.create_async(
             role=role, grantee_type=grantee_type, email_address=email_address, client=client
         )
 
