@@ -69,6 +69,8 @@ __all__ = [
     "FunctionLibraryType",
 ]
 
+_USER_ROLE = "user"
+
 
 def pil_to_blob(img):
     bytesio = io.BytesIO()
@@ -256,7 +258,7 @@ def to_content(content: ContentType):
         return protos.Content(parts=[to_part(part) for part in content])
     else:
         # Maybe this is a Part?
-        return protos.Content(parts=[to_part(content)])
+        return protos.Content(parts=[to_part(content)], role=_USER_ROLE)
 
 
 def strict_to_content(content: StrictContentType):
